@@ -1,0 +1,16 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: grav
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: grav
+    spec: 
+      containers:
+      - name: grav
+        image: "swifter/apache2-phpfpm-grav:latest"
+        ports:
+        - containerPort: 80

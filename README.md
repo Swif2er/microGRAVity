@@ -11,7 +11,6 @@ minikube start
 ```
 kubectl create -f grav-deployment.yaml
 ```
-* Must be executed from root directory of cloned repository in step 1.
 4. Create GRAV service:
 ```
 kubectl expose deployment grav --type=LoadBalancer
@@ -20,3 +19,7 @@ kubectl expose deployment grav --type=LoadBalancer
 ```
 minikube service grav
 ```
+
+### How I would handle data persistence of the GRAV container in the future
+
+I would add a data volume to a container. It could be a some host directory, directory from separate Data Volume Container or some shared-storage (for ex. NFS or else).
